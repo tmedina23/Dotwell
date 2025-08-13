@@ -1,0 +1,63 @@
+body {
+    background-color: rgb(30, 30, 31);
+}
+
+.grid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1188px;
+    padding: 16px;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+button {
+    height: 36px;
+    width: 80px;
+    padding: 8px 13px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    background-color: rgb(66, 66, 66);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.colorPicker {
+    padding: 0 0;
+    border: none;
+    outline: none;
+    height: 44px;
+    width: 44px;
+    margin-left: 30px;
+    margin-bottom: 4px;
+    background: none;
+    vertical-align: middle;
+}
+
+.tool.active {
+    /*Pantone Sunflower*/
+    background-color: rgb(211, 146, 54);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    font-size: 45px;
+    line-height: 0px;
+    margin: -10px 4px;
+    color: rgb(66, 66, 66);
+}
+
+.dot:hover {
+    cursor: pointer;
+    color: #ff0000;
+}
+
+.dot.active {
+    color: rgb(211, 146, 54);
+}

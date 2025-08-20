@@ -1,10 +1,12 @@
 let isMouseDown = false;
 let tool = 'Pencil';
+let colorPicker = null;
 
 window.onload = () => {
         initDots();
         window.addEventListener('mousedown', () => isMouseDown = true);
         window.addEventListener('mouseup', () => isMouseDown = false);
+        colorPicker = document.querySelector('.colorPicker');
         initButtons();
 };
 
@@ -14,6 +16,7 @@ initDots = () => {
         const dot = document.createElement('div');
         dot.classList.add('dot');
         dot.innerHTML = '•';
+        dot.style.color = 'rgb(66, 66, 66)';
         container.appendChild(dot);
         dot.addEventListener('mouseenter', dotHover);
         dot.addEventListener('mousedown', dotClick);
@@ -24,9 +27,9 @@ dotHover = (e) => {
     if (isMouseDown) {
         const dot = e.target;
         if(tool === 'Pencil'){
-            dot.classList.add('active');
+            dot.style.color = colorPicker.value;
         } else if (tool === 'Eraser') {
-            dot.classList.remove('active');
+            dot.style.color = 'rgb(66, 66, 66)';
         }
     }
 };
@@ -34,9 +37,9 @@ dotHover = (e) => {
 dotClick = (e) => {
     const dot = e.target;
     if(tool === 'Pencil'){
-        dot.classList.add('active');
+        dot.style.color = colorPicker.value;
     } else if (tool === 'Eraser') {
-        dot.classList.remove('active');
+        dot.style.color = 'rgb(66, 66, 66)';
     }
 };
 
@@ -53,6 +56,6 @@ initButtons = () => {
     });
     clearButton.addEventListener('click', () => {
         const dots = document.querySelectorAll('.dot');
-        dots.forEach(dot => dot.classList.remove('active'));
+        dots.forEach(dot => dot.style.color = 'rgb(66, 66, 66)');
     });
 };

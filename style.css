@@ -57,7 +57,3 @@ button {
     cursor: pointer;
     color: #ff0000;
 }
-
-.dot.active {
-    color: rgb(211, 146, 54);
-}
